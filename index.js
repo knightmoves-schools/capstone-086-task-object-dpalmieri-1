@@ -1,15 +1,20 @@
-let tasks = ['pack spikes for track meet', 'make my bed', 'walk the dog'];
-            
-function drawCard(index, description){
+let tasks = [
+    {description: 'pack spikes for track meet', status: 'todo'}, 
+    {description: 'make my bed', status: 'todo'}, 
+    {description: 'walk the dog', status: 'todo'},
+    {description: 'write draft english paper', status: 'doing'},
+    {description: 'sanding art project', status: 'doing'}];
+    
+function drawCard(index, task){
     return `<div id="task-${index}" class="card">
         <div class="task-menu">
-            <div class="menu-bar todo">...</div>
+            <div class="menu-bar  ${task.status}">...</div>
             <ul class="task-menu-items">
                 <li><a href="/edit/${index}">Edit</a></li>
                 <li><a href="/delete/${index}">Delete</a></li>
             </ul>
         </div>
-        ${description}
+        ${task.description}
     </div>`
 }
 
